@@ -97,7 +97,7 @@ func (s *SQLiteParcelStore) SetAddress(number int, address string) error {
 }
 
 func (s *SQLiteParcelStore) Delete(number int) error {
-	_, err := s.db.Exec("DELETE FROM parcel WHERE number = :number AND status = :status",
+	_, err := s.db.Exec("DELETE FROM PARCEL WHERE number = :number AND status = :status",
 		sql.Named("number", number),
 		sql.Named("status", ParcelStatusRegistered))
 
